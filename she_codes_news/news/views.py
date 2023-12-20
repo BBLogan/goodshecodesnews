@@ -1,3 +1,5 @@
+# News Setup Step 12: adding a new view
+
 from django.views import generic
 from .models import NewsStory
 
@@ -14,3 +16,8 @@ class IndexView(generic.ListView):
         context = super().get_context_data(**kwargs)
         context['latest_stories'] = NewsStory.objects.all()[:4]
         return context
+
+class StoryView(generic.DetailView):
+    model = NewsStory
+    template_name = 'news/story.html'
+    context_object_name = 'story'
