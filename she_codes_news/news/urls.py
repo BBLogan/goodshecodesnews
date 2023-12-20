@@ -2,6 +2,7 @@
 # Forms Setup Step 5: add a URL for our form page
 
 # news/urls.py
+
 from django.urls import path
 from . import views
 
