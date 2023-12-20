@@ -1,6 +1,7 @@
 <!-- News Setup Step 9: complete the templates -->
 <!-- News Setup Step 10: apply some more styles -->
 <!-- News Setup Step 11: insert some story card templates -->
+<!-- Forms Setup Step 8: add a link on the homepage -->
 
 {% extends "base.html" %}
 {% load static %}
@@ -10,6 +11,8 @@
 {% endblock %}
 
 {% block content %}
+    <br>
+    <a href="{% url 'news:newStory' %}">Write New Story</a>
     <h2>Latest News</h2>
 
     <div id="latest-stories">
