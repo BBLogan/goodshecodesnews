@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 # News Setup Step 4: registering the news app
 # News Setup Step 9: complete the templates
+# Users Setup Step 1: creating the app
+# Users Setup Step 2: register the new app
 
 # she_codes_news/settings.py
 from pathlib import Path
@@ -43,7 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users.apps.UsersConfig',
 ]
+
+AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
