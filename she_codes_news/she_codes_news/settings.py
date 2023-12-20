@@ -14,6 +14,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 # News Setup Step 9: complete the templates
 # Users Setup Step 1: creating the app
 # Users Setup Step 2: register the new app
+# Users Setup Step 8: create a superuser
+# Users Setup Step 9: specify where logging in take you
+# Users Setup Step 10: log in 
+# Users Setup Step 11: log out
 
 # she_codes_news/settings.py
 from pathlib import Path
@@ -132,3 +136,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'news:index'
+LOGOUT_REDIRECT_URL = 'news:index'
