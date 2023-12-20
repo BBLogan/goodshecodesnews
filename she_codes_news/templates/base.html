@@ -1,5 +1,6 @@
 <!-- News Setup Step 9: complete the templates -->
 <!-- News Setup Step 10: apply some more styles -->
+<!-- News Setup Step 14: add a nav bar -->
 
 
 <!-- templates/bases.html -->
@@ -21,9 +22,9 @@
                     <h1>She {Codes} News</h1>
                 </a>
             </div>
-            <!-- include nav here -->
+            {% include './nav.html' %}
         </header>
 
-        <!-- content blocks here -->
+
         {% block content %} {% endblock %}
     </body>
