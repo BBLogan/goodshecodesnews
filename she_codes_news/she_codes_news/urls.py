@@ -16,6 +16,7 @@ Including another URLconf
 
 # News Setup Step 6: adding the URLS for our news/ app
 # Users Setup Step 7: add the users app URLs to the project
+# Users Setup Step 15: create a urls.py file for the users app
 
 # she_codes_news/urls.py
 from django.contrib import admin
@@ -24,5 +25,6 @@ from django.urls import include, path
 urlpatterns = [
     path('news/', include('news.urls')),
     path('admin/', admin.site.urls),
+    path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
 ]

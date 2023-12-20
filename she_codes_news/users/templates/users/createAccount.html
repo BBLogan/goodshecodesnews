@@ -1,0 +1,13 @@
+<!-- Users Setup Step 13: add an account creation form -->
+
+<!-- users/templates/users/createAccount.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Create Account</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Account</button>
+    </form>
+{% endblock %}
