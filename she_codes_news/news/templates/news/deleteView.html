@@ -1,0 +1,29 @@
+
+<!-- news/templates/news/deleteView.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="header_01">
+    <div class="Header_01">
+        <h1>Story Edit</h1>
+    </div>
+</section>
+
+<section id="Tell">
+    <h2 id="Tell">Are you sure you want to delete the story?</h2>
+</section>
+
+<div class="container">
+    <form action="" method="post" class="form">
+        {% csrf_token %}
+        <input type="submit" value="Delete Story">
+    </form>
+</div>
+
+{% endblock %}

@@ -7,11 +7,15 @@
 from django import forms
 from django.forms import ModelForm
 from .models import NewsStory
-from django.template.defaultfilters import mark_safe
+# from django.template.defaultfilters import mark_safe
 
 class StoryForm(ModelForm):
     class Meta: 
         model = NewsStory
-        fields = ['title', 'pub_date', 'content']
-        widgets = {'pub_date': forms.DateInput(format='%m/%d/%Y', attrs={'class':'form-control', 'placeholder':'Select a date', 'type':'date'}),}
+        fields = ['title', 'pub_date', 'content', 'image_url']
+        widgets = {'pub_date': forms.DateInput(format='%d/%m/%Y %H:%M', 
+                attrs={
+                    'class':'form-control', 
+                    'placeholder':'Select a date', 
+                    'type':'datetime-local'}),}
         # label = mark_safe()
