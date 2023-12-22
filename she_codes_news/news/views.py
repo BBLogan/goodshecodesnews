@@ -3,7 +3,6 @@
 # Users Setup Step 19: update the story creation view
 
 # news/views.py
-
 from typing import Any
 from django.db import models
 from django.db.models.base import Model as Model
