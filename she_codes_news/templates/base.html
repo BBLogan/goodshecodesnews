@@ -3,13 +3,16 @@
 <!-- News Setup Step 14: add a nav bar -->
 
 
-<!-- templates/bases.html -->
+<!-- templates/base.html -->
 {% load static %}
+<!doctype html>
+<html lang="en">
+
     <head>
         <meta charset="utf-8">
-        <title>She Codes News</title>
+        <title>News Cha Cha Cha</title>
         <meta name="description" content="">
-        <meta name="author" content="YOUR NAME HERE">
+        <meta name="author" content="Bex Logan">
         <link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
         {% block stylesheets %} {% endblock %}
@@ -19,7 +22,7 @@
         <header>
             <div id="header-text">
                 <a id="header-link" href="{% url 'news:index' %}">
-                    <h1>She {Codes} News</h1>
+                    <h1>News Cha Cha Cha</h1>
                 </a>
             </div>
             {% include './nav.html' %}
@@ -28,3 +31,4 @@
 
         {% block content %} {% endblock %}
     </body>
+</html>
