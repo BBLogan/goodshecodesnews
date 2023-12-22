@@ -23,8 +23,8 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('news/', include('news.urls')),
+    path('news/', include('news.urls', namespace='news')),
     path('admin/', admin.site.urls),
-    path('users/', include('users.urls')),
+    path('users/', include('users.urls', namespace='users')),
     path('users/', include('django.contrib.auth.urls')),
 ]

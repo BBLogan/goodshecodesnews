@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
 
+body {
+    background-color: rgb(240, 239, 239);
+    font-family: 'Montserrat Subrayada', sans-serif;
+}
+
 .story-card {
     margin: 2px;
     border: 1px solid antiquewhite;
@@ -14,10 +19,6 @@
     gap: 1px 1px;
     grid-template-areas: "left-1 right-1" "left-1 right-2" "left-1 right-3";
     max-height: 500px;
-}
-
-body {
-    background-color: rgb(240, 239, 239);
 }
 
 header {
