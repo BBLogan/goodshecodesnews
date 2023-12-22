@@ -1,15 +1,26 @@
 <!-- News Setup Step 13: link from the index to the stories -->
 
+{% load static %}
 
-    <a href="{% url 'news:story' story.id %}">
-        {% if position < 5 %}
-            <img src="../static/news/images/placeholder-{{ position }}.jpg">
-        {% else %}
-            <img src="https://picsum.photos/600">
-        {% endif %}
-        <div class="story-card-text">
-            <h3>{{ story.title }}</h3>
-            <h4>{{ story.author }}</h4>
-            <h4>{{ story.pub_date }}</h4>
-        </div>
-    </a>
+    <div class="story-card" id="story-card-{{ position }}">
+        <a href="{% url 'news:story' story.id %}">
+            {% if story.img_url %}
+                <img src="{{ story.image_url }}">
+            {% elif position < 5 %}
+                <img src="../static/news/images/placeholder-{{ position }}.jpg">
+            {% else %}
+                <img src="https://picsum.photos/600">
+            {% endif %}
+
+            <div class="story-card-text">
+                <h3>{{ story.title }}</h3>
+                <a href="{% url 'news:authorView' story.author %}"><h4>{{ story.author.username }}</h4></a>
+                <!-- if user is authenticated and a super user then -->
+                {% if story.author == request.user %}
+                    <a href="{% url 'news:editStory' story.id %}">Edit Story</a>
+                    <a href="{% url 'news:deleteStory' story.id %}">Delete Story</a>
+                <!-- <h4>{{ story.pub_date }}</h4> -->
+                {% endif %}
+            </div>
+        </a>
+    </div>
