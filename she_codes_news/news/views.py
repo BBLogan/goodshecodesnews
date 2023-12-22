@@ -60,7 +60,7 @@ class DeleteView(generic.DeleteView):
     template_name = 'news/deleteView.html'
     success_url = reverse_lazy('news:index')
 
-    def DeleteView(self, request, *args, **kwargs):
+    def delete(self, request, *args, **kwargs):
         return super().delete(request, *args, **kwargs)
 
 class AuthorView(generic.DetailView):
@@ -74,5 +74,9 @@ class AuthorView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         author = self.get_object()
-        context['latest_stories'] = NewsStory.objects.filter(author__id=author.id)
+        context['latest_stories'] = self.get_queryset()
         return context
+        
+    def get_queryset(self):
+        author = self.get_object()
+        return NewsStory.objects.filter(author__id=author.id)
