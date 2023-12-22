@@ -17,5 +17,7 @@ class MyProfileView(TemplateView):
     success_url = reverse_lazy('myProfile')
     template_name = 'users/profileView.html'
 
-    def get_object(self, *args, **kwargs):
-        return self.request.user
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user'] = self.request.user
+        return context
