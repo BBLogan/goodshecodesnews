@@ -48,8 +48,15 @@ class EditView(LoginRequiredMixin,generic.UpdateView):
     model = NewsStory
     form_class = StoryForm
     context_object_name = 'storyform-edit'
+    template_name = 'news/editView.html'
+    success_url = reverse_lazy('news:index')
+
+class DeleteView(generic.DeleteView):
+    model = NewsStory
+    form_class = StoryForm
+    context_object_name = 'storyform-delete'
     template_name = 'news/deleteView.html'
-    success_url = reverse_lazy('news:oindex')
+    success_url = reverse_lazy('news:index')
 
     def DeleteView(self, request, *args, **kwargs):
         return super().delete(request, *args, **kwargs)
