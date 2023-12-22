@@ -20,7 +20,6 @@
         {% if story.author == request.user %}
             <a href="{% url 'news:editStory' story.id %}">Edit Story</a> 
             <a href="{% url 'news:deleteStory' story.id %}">Delete Story</a>
-
         {% endif %}
     </div>
     </a>
