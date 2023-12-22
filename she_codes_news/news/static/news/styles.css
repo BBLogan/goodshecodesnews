@@ -19,7 +19,7 @@
     max-height: 500px;
 }
 
-#story-card-1 {
+/* #story-card-1 {
     grid-area: left-1;
 }
 
@@ -72,26 +72,26 @@
     margin-right: 5px;
     object-fit: contain;
     border-radius: 20px;
-}
+} */
 
-#all-stories {
+/* #all-stories {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 6px;
-}
+} */
 
-#all-stories .story-card {
+/* #all-stories .story-card {
     flex-basis: 32%;
     flex-grow: 1;
-}
+} */
 
 #story-content {
     text-align: justify;
 }
 
-#story-content img {
+/* #story-content img {
     float: right;
     margin: 0 0 10px 10px;
     width: 50%;
-}
+} */
