@@ -4,11 +4,11 @@
     padding: 5px;
 }
 
-/* .story-card img {
+.story-card img {
     width: 100%;
     height: 300px;
     object-fit: cover;
-} */
+}
 
 #latest-stories {
     display: grid;
@@ -89,9 +89,9 @@
 #story-content {
     text-align: justify;
 }
-/* 
+
 #story-content img {
     float: right;
     margin: 0 0 10px 10px;
     width: 50%;
-} */
+}
