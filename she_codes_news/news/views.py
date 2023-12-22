@@ -78,6 +78,7 @@ class DeleteStoryView(View):
             messages.error(request, 'You are not authorised to delete this story')
             return redirect('news:story', story.id)
 
+# older version of DeleteView
 # class DeleteView(generic.DeleteView):
 #     model = NewsStory
 #     form_class = StoryForm
