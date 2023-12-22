@@ -20,7 +20,7 @@
         <h2>Hello {{ user.username }}</h2>
         <p>Are you sure you want to delete the story?</p>
         <div class="delete-button">
-            <form action="" method="post" class="form">
+            <form action="{% url 'news:delete_story' story.id %}" method="post" class="form">
                 {% csrf_token %}
                 <input type="submit" value="Yes Delete My Story">
             </form>
@@ -30,7 +30,5 @@
         <p>You are not logged in</p>
     {% endif %}
 </section>
-
-
 
 {% endblock %}

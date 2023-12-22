@@ -7,7 +7,7 @@ from typing import Any
 from django.db import models
 from django.db.models.base import Model as Model
 from django.db.models.query import QuerySet
-from django.views import generic
+from django.views import generic, View
 from django.views.generic.edit import UpdateView, DeleteView
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
@@ -15,8 +15,11 @@ from django.urls import reverse_lazy
 from .models import NewsStory
 from .forms import StoryForm
 from users.models import CustomUser
-from django.shortcuts import get_list_or_404, get_object_or_404
+from django.shortcuts import render, get_list_or_404, get_object_or_404, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
+from django.contrib.auth.decorators import login_reuqired
+from django.utils.decorators import method_decorator
 
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
@@ -53,6 +56,7 @@ class EditView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'news/editView.html'
     success_url = reverse_lazy('news:index')
 
+method_decorator(login_reuqired, name='dispatch')
 class DeleteView(generic.DeleteView):
     model = NewsStory
     form_class = StoryForm
