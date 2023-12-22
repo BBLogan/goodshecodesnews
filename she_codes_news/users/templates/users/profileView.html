@@ -16,6 +16,15 @@
                     <h4>Username: {{ request.user.username }}</h4>
                     <h4>Last Login: {{ request.user.last_login }}</h4>
                     <h4>Member Since: {{ request.user.date_joined }}</h4>
+                    <h4>Stories: {% if author_stories %}
+                                {% for story in author_stories %}
+                                    {% include 'news/storyCard.html' with story=story position=forloop.counter %}
+                                {% endfor %}
+                            {% else %}
+                                <p>No stories available</p>
+                            {% endif %}
+                            {{ author.stories| linebreaks }}
+                    </h4>
                 </div>
             {% else %}
                 <h2>Please login to view your Profile</h2>

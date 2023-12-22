@@ -4,8 +4,8 @@
 
 <div class="story-card" id="story-card-{{ position }}">
     <a href="{% url 'news:story' story.id %}">
-        {% if story.image_url %}
-            <img src="{{ story.image_url }}">
+        {% if story.img_url %}
+            <img src="{{ story.img_url }}">
         {% elif position < 5 %}
             <img src="../static/news/images/placeholder-{{ position }}.jpg">
         {% else %}
