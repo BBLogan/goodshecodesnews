@@ -33,14 +33,13 @@
 </div>
 </section>
 
+
 <section>
 <div>
     <h3>All Stories</h3>
 </div>
 
-
 <div id="all-stories">
-
     {% if latest_stories %}
         {% for story in all_stories %}
             {% include './StoryCard.html' with story=story position=forloop.counter %}

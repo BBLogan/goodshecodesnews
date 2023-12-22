@@ -56,7 +56,7 @@ class EditView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'news/editView.html'
     success_url = reverse_lazy('news:index')
 
-method_decorator(login_required, name='dispatch')
+# method_decorator(login_required, name='dispatch')
 class DeleteStoryView(View):
     template_name = 'news/deleteView.html'
 
