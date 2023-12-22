@@ -1,0 +1,41 @@
+<!-- Vistor = individual browsing website but with no account &/ not logged in -->
+<!-- visitor with an account & who's logged into the site -->
+
+<!-- news/template/news/authorView.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h2>Stories for {{ author.username }}</h2>
+<div id="story-wrapper">
+    <h2>{{ story.title }}</h2>
+    <h4>{{ story.author }}</h4>
+    <h4>{{ stories }}</h4>
+    <div id="story-content">
+        {{ story.content|linebreaks }}
+    </div>
+</div>
+
+
+    <div id="latest-stories">
+        {% if latest_stories %}
+            {% for story in latest_stories %}
+                {% include "./storyCard.html" with story=story position=forloop.counter %}
+            {% endfor %}
+        {% else %}
+            <p>No stories are available.</p>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+<!-- Assignment Notes -->
+<!-- This page is part of the News setup:
+[ ] Part 1: View stories by a particular author; filtering stories by an authors username
+
+-->
