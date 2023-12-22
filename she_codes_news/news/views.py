@@ -2,7 +2,8 @@
 # Forms Setup Step 3: adding a new view for the form
 # Users Setup Step 19: update the story creation view
 
-# news/views
+# news/views.py
+
 from typing import Any
 from django.db import models
 from django.db.models.base import Model as Model
@@ -36,7 +37,7 @@ class StoryView(generic.DetailView):
     template_name = 'news/story.html'
     context_object_name = 'story'
 
-class AddStoryView(LoginRequiredMixin,generic.CreateView):
+class AddStoryView(LoginRequiredMixin, generic.CreateView):
     form_class = StoryForm
     context_object_name = 'storyform'
     template_name = 'news/createStory.html'
@@ -46,7 +47,7 @@ class AddStoryView(LoginRequiredMixin,generic.CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
-class EditView(LoginRequiredMixin,generic.UpdateView):
+class EditView(LoginRequiredMixin, generic.UpdateView):
     model = NewsStory
     form_class = StoryForm
     context_object_name = 'storyform-edit'
