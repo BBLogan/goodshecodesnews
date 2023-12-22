@@ -7,7 +7,7 @@
             {% if story.img_url %}
                 <img src="{{ story.img_url }}">
             {% elif position < 5 %}
-                <img src="{{ story.img_url|default:'/static/news/images/placeholder-'|add:position|add:'.jpg' }}">
+                <img src="../static/news/images/placeholder-{{ position }}.jpg">
             {% else %}
                 <img src="https://picsum.photos/600">
             {% endif %}

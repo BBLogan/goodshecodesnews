@@ -17,7 +17,7 @@
         {% if story.img_url %}
             <img src="{{ story.img_url }}">
         {% else %}
-            <img src="{% static 'news/images/placeholder-{ placeholder }.jpeg' %}">
+            <!-- <img src="{% static 'news/images/placeholder-{ placeholder }.jpeg' %}"> -->
         {% endif %}
         {{ story.content|linebreaks }}
     </div>
