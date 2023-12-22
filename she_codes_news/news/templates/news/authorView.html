@@ -11,16 +11,19 @@
 
 {% block content %}
 
-<h2>Stories for {{ author.username }}</h2>
-<div id="story-wrapper">
-    <h2>{{ story.title }}</h2>
-    <h4>{{ story.pub_date }}</h4>
-    <h4>{{ stories }}</h4>
-    <div id="story-content">
-        {{ story.content|linebreaks }}
-    </div>
-</div>
-
+<section class="author-view">
+    <h2>Stories for {{ author.username }}</h2>
+    {% for story in all_stories %}
+        {% if story.image %}
+            <h4>{{ story.image }}</h4>
+            <img src="{{ story.img_url }}">
+        {% else %}
+            <img src="{% static '/news/images/placeholder-5.jpg' %}">
+        {% endif %}
+        <a href="{% 'news:story' story.id %}"><h3>{{ story.title }}</h2></a>        
+        <h5>{{ story.pub_date }}</h5>
+    {% endfor %}
+</section>
 
     <div id="latest-stories">
         {% if latest_stories %}
@@ -28,10 +31,9 @@
                 {% include "./storyCard.html" with story=story position=forloop.counter %}
             {% endfor %}
         {% else %}
-            <p>No stories are available.</p>
-        {% endif %}
+            <p>No stories are available</p>
+        {% endfor %}
     </div>
-
 {% endblock %}
 
 <!-- Assignment Notes -->
