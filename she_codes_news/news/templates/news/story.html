@@ -14,10 +14,10 @@
     <h4>{{ story.author }}</h4>
     
     <div id="story-content">
-        {% if story.image %}
-            <img src="{{ story.image }}">
+        {% if story.img_url %}
+            <img src="{{ story.img_url }}">
         {% else %}
-            <img src="{% static 'news/images/placeholder-3.jpeg' %}">
+            <img src="{% static 'news/images/placeholder-{ placeholder }.jpeg' %}">
         {% endif %}
         {{ story.content|linebreaks }}
     </div>

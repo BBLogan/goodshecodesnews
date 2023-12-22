@@ -18,7 +18,7 @@ from users.models import CustomUser
 from django.shortcuts import render, get_list_or_404, get_object_or_404, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
-from django.contrib.auth.decorators import login_reuqired
+from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
 class IndexView(generic.ListView):
@@ -56,16 +56,37 @@ class EditView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'news/editView.html'
     success_url = reverse_lazy('news:index')
 
-method_decorator(login_reuqired, name='dispatch')
-class DeleteView(generic.DeleteView):
-    model = NewsStory
-    form_class = StoryForm
-    context_object_name = 'storyform-delete'
+method_decorator(login_required, name='dispatch')
+class DeleteStoryView(View):
     template_name = 'news/deleteView.html'
-    success_url = reverse_lazy('news:index')
 
-    def delete(self, request, *args, **kwargs):
-        return super().delete(request, *args, **kwargs)
+    def get(self, request, story_id):
+        story = get_object_or_404(NewsStory, id=story_id)
+        return render(request, self.template_name, {'story': story})
+    
+    def post(self, request, story_id):
+        story = get_object_or_404(NewsStory, id=story_id)
+    
+        # check if user is the author of the story
+        if request.user == story.author:
+            # delete the story
+            story.delete()
+            messages.success(request, 'Story deleted successfully')
+            return redirect('news:index')
+        else:
+            # user is not authorised to delete this story
+            messages.error(request, 'You are not authorised to delete this story')
+            return redirect('news:story', story.id)
+
+# class DeleteView(generic.DeleteView):
+#     model = NewsStory
+#     form_class = StoryForm
+#     context_object_name = 'storyform-delete'
+#     template_name = 'news/deleteView.html'
+#     success_url = reverse_lazy('news:index')
+
+#     def delete(self, request, *args, **kwargs):
+#         return super().delete(request, *args, **kwargs)
 
 class AuthorView(generic.DetailView):
     model = CustomUser

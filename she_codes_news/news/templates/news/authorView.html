@@ -14,8 +14,8 @@
 <section class="author-view">
     <h2>Stories for {{ author.username }}</h2>
     {% for story in all_stories %}
-        {% if story.image %}
-            <img src="{{ story.image }}" alt="Story Image" class="story-image">
+        {% if story.img_url %}
+            <img src="{{ story.img_url }}" alt="Story Image" class="story-image">
         {% else %}
             <img src="{% static 'news/images/placeholder-5.jpg' %}" alt="Placeholder Image" class="placeholder-image">
         {% endif %}
