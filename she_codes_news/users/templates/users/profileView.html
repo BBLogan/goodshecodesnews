@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %}
+
+<h2>My Profile</h2>
+
+{% block content %}
+    <div>
+        <section class="profile_container">
+            {% if request.user.is_authenticated %}
+                <div class="profile_information">
+                    <h3>Profile Information</h3>
+                    <h4>Username: {{ request.user.username }}</h4>
+                    <h4>Last Login: {{ request.user.last_login }}</h4>
+                    <h4>Member Since: {{ request.user.date_joined }}</h4>
+                </div>
+            {% else %}
+                <h2>Please login to view your Profile</h2>
+        </section>
+            {% endif %}
+    </div>
+
+{% endblock %}

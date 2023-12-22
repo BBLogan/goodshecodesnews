@@ -4,7 +4,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser
-from django.template.defaultfilters import mark_safe
+# from django.template.defaultfilters import mark_safe
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
