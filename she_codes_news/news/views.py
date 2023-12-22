@@ -5,6 +5,8 @@
 # news/views
 from typing import Any
 from django.db import models
+from django.db.models.base import Model as Model
+from django.db.models.query import QuerySet
 from django.views import generic
 from django.views.generic.edit import UpdateView, DeleteView
 from django.forms.models import BaseModelForm
@@ -34,7 +36,7 @@ class StoryView(generic.DetailView):
     template_name = 'news/story.html'
     context_object_name = 'story'
 
-class AddStoryView(generic.CreateView):
+class AddStoryView(LoginRequiredMixin,generic.CreateView):
     form_class = StoryForm
     context_object_name = 'storyform'
     template_name = 'news/createStory.html'
@@ -60,3 +62,16 @@ class DeleteView(generic.DeleteView):
 
     def DeleteView(self, request, *args, **kwargs):
         return super().delete(request, *args, **kwargs)
+
+class AuthorView(generic.DetailView):
+    model = CustomUser
+    template_name = 'news/authorView.html'
+    context_object_name = 'author'
+
+    def get_object(self, *args, **kwargs):
+        return get_list_or_404(CustomUser, username=self.kwargs['username'])
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['latest_stories'] = NewsStory.objects.filter(author__id=self.object.id)
+        return context

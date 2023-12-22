@@ -14,7 +14,7 @@
 
             <div class="story-card-text">
                 <h3>{{ story.title }}</h3>
-                <a href="{% url 'news:authorView' story.author %}"><h4>{{ story.author.username }}</h4></a>
+                <a href="{% url 'news:authorView' story.author %}"><h4>{{ story.author }}</h4></a>
                 <!-- if user is authenticated and a super user then -->
                 {% if story.author == request.user %}
                     <a href="{% url 'news:editStory' story.id %}">Edit Story</a>

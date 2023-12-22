@@ -18,10 +18,10 @@
 {% else %}
     <a href="{% url 'login' %}">Please login to write a story</a>
 {% endif %}
-    <br>
+<br>
 
 <section>
-<h2>Latest News</h2>
+    <h2>Latest News</h2>
 
     <div id="latest-stories">
         {% if latest_stories %}
@@ -29,13 +29,14 @@
                 {% include "./storyCard.html" with story=story position=forloop.counter %}
             {% endfor %}
         {% else %}
-            <p>No stories are available.</p>
+            <p>No stories are available</p>
         {% endif %}
     </div>
 </section>
 
 <section>
-    <div><h3>All Stories</h3>
+    <div>
+        <h3>All Stories</h3>
     </div>
 
     <div id="all-stories">
@@ -44,7 +45,7 @@
                 {% include "./storyCard.html" with story=story position=forloop.counter %}
             {% endfor %}
         {% else %}
-            <p>No stories are available.</p>
+            <p>No stories are available</p>
         {% endif %}
     </div>
 </section>
