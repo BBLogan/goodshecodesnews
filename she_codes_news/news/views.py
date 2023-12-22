@@ -15,7 +15,7 @@ from django.urls import reverse_lazy
 from .models import NewsStory
 from .forms import StoryForm
 from users.models import CustomUser
-from django.shortcuts import get_list_or_404
+from django.shortcuts import get_list_or_404, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 class IndexView(generic.ListView):
@@ -69,9 +69,10 @@ class AuthorView(generic.DetailView):
     context_object_name = 'author'
 
     def get_object(self, *args, **kwargs):
-        return get_list_or_404(CustomUser, username=self.kwargs['username'])
+        return get_object_or_404(CustomUser, username=self.kwargs['username'])
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['latest_stories'] = NewsStory.objects.filter(author__id=self.object.id)
+        author = self.get_object()
+        context['latest_stories'] = NewsStory.objects.filter(author__id=author.id)
         return context
