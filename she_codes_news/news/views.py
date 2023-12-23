@@ -57,37 +57,37 @@ class EditView(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy('news:index')
 
 # method_decorator(login_required, name='dispatch')
-class DeleteStoryView(View):
-    template_name = 'news/deleteView.html'
+# class DeleteStoryView(View):
+#     template_name = 'news/deleteView.html'
 
-    def get(self, request, story_id):
-        story = get_object_or_404(NewsStory, id=story_id)
-        return render(request, self.template_name, {'story': story})
+#     def get(self, request, story_id):
+#         story = get_object_or_404(NewsStory, id=story_id)
+#         return render(request, self.template_name, {'story': story})
     
-    def post(self, request, story_id):
-        story = get_object_or_404(NewsStory, id=story_id)
+#     def post(self, request, story_id):
+#         story = get_object_or_404(NewsStory, id=story_id)
     
-        # check if user is the author of the story
-        if request.user == story.author:
-            # delete the story
-            story.delete()
-            messages.success(request, 'Story deleted successfully')
-            return redirect('news:index')
-        else:
-            # user is not authorised to delete this story
-            messages.error(request, 'You are not authorised to delete this story')
-            return redirect('news:story', story.id)
+#         # check if user is the author of the story
+#         if request.user == story.author:
+#             # delete the story
+#             story.delete()
+#             messages.success(request, 'Story deleted successfully')
+#             return redirect('news:index')
+#         else:
+#             # user is not authorised to delete this story
+#             messages.error(request, 'You are not authorised to delete this story')
+#             return redirect('news:story', story.id)
 
 # older version of DeleteView
-# class DeleteView(generic.DeleteView):
-#     model = NewsStory
-#     form_class = StoryForm
-#     context_object_name = 'storyform-delete'
-#     template_name = 'news/deleteView.html'
-#     success_url = reverse_lazy('news:index')
+class DeleteStoryView(generic.DeleteView):
+    model = NewsStory
+    form_class = StoryForm
+    context_object_name = 'storyform-delete'
+    template_name = 'news/deleteView.html'
+    success_url = reverse_lazy('news:index')
 
-#     def delete(self, request, *args, **kwargs):
-#         return super().delete(request, *args, **kwargs)
+    def delete(self, request, *args, **kwargs):
+        return super().delete(request, *args, **kwargs)
 
 class AuthorView(generic.DetailView):
     model = CustomUser

@@ -29,6 +29,7 @@ img {
 }
 /* End of CSS Reset Code */
 
+
 /* Global styles */
 body {
     background-color: rgb(240, 239, 239);
@@ -44,6 +45,7 @@ a {
 a, p {
     font-family: monospace;
 }
+
 
 /* HEADINGS */
 h1 {
@@ -68,7 +70,6 @@ h3 {
 h4 {
     font-family: monospace;
     font-size: 1rem;
-    /* font-weight: bold; */
     margin: 0;
 }
 
@@ -85,6 +86,7 @@ body {
     margin-right: 20px;
 }
 
+
 /* HEADER */
 header {
     display: flex;
@@ -97,7 +99,6 @@ header {
     color: #800080;
 }
 
-
 #slogan {
     font-style: italic;
     font-weight: lighter;
@@ -108,6 +109,7 @@ header {
     display: flex;
     padding-bottom: 0.8em;
 }
+
 
 /* NAV */
 nav {
@@ -138,8 +140,8 @@ nav {
     font-style: italic;
 }
 
-/* Footer */
 
+/* Footer */
 footer {
     margin: 20px
 }
