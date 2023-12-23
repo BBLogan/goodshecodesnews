@@ -78,6 +78,6 @@ Please note no additional features are currently with this project (as of 23/12/
 {description of image} {./relative_path_to_image_file}
 
 ## Test Accounts
-UN: samsamsam - PW: SamsYourMan01
-UN: BBLogan02 - PW: Farts Farts Farts01
-UN: bblogan1983 - PW: YnQkdzsyeY_Ji!4 (PW not used on anyother site)
+- UN: samsamsam - PW: SamsYourMan01
+- UN: BBLogan02 - PW: Farts Farts Farts01
+- UN: bblogan1983 - PW: YnQkdzsyeY_Ji!4 (PW not used on anyother site)
