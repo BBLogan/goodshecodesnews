@@ -1,7 +1,7 @@
 Bex Logan - She Codes News Project
 
 ## About this project
-Well this news story website certainly has taught me a lot - even concepts not in the teaching materials like how branch multiple times, how to merge, how to not loose your head and oh yeah building a responsive news website. Please note
+Well this news story website certainly has taught me a lot - even concepts not in the teaching materials like how branch multiple times, how to merge, how to not loose your head and oh yeah building a responsive news website. Please note no additional features have been built, but if you want to know about branching, git merging and cloning new repos (which the below is the third set up) please let me know.
 
 ## How to run the code
 The below is set out for PC users - Mac ppl pls convert the terminal inputs
