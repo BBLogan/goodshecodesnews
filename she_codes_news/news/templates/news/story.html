@@ -1,7 +1,7 @@
 <!-- News Setup Step 12: adding a new view -->
 
 <!-- news/templates/news/story.html -->
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block stylesheets %}
@@ -9,17 +9,31 @@
 {% endblock %}
 
 {% block content %}
-<div id="story-wrapper">
+<section id="story-wrapper">
     <h2>{{ story.title }}</h2>
-    <h4>{{ story.author }}</h4>
+    <h4>{{ story.author.username }}</h4>
+    <p>{{ story.pub_date }}</p>
+    
     <div id="story-content">
         {% if story.img_url %}
-        <img src="{{ story.img_url }}">
+            <img src="{{ story.img_url }}">
         {% else %}
-
+            <img src="{% static '/news/images/placeholder-5.jpg' %}">
         {% endif %}
+    </div>
+    <div class="story-text">
         {{ story.content|linebreaks }}
     </div>
-</div>
+</section>
+
+<section>
+    {% if request.user.is_authenticated %}
+        {% if request.user == story.author %}
+            <a href="{% url 'news:updateStory' story.id %}" class="button">Update Your Story</a>
+            <br>
+            <a href="{% url 'news:deleteStory' story.id %}" class="button">Delete Your Story</a>
+        {% endif %}
+    {% endif %}
+</section>
 
 {% endblock %}
