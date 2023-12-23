@@ -17,7 +17,7 @@
 <section id="delete-story">
     {% if request.user == story.author %}
         <h2>Hi, {{ user.username }}</h2>
-        <p>Are you sure you want to delete the story?</p>
+        <p>Are you sure you want to delete {{ story.title }}?</p>
         <div class="delete-button">
             <form action="{% url 'news:deleteStory' story.id %}" method="post" class="form">
                 {% csrf_token %}
