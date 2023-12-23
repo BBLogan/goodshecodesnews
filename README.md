@@ -30,14 +30,14 @@ My ERD - project_images\dbschema.png
 
 ## Project features
 - Order stories by date
-Stories order in date time chronology with no midnight - ![stories by date time - no midnight](https://github.com/BBLogan/goodshecodesnews/blob/main/project_images/storiesindatetimeorder-nomidnight.png)
+![Stories order in date time chronology with no midnight](https://github.com/BBLogan/goodshecodesnews/blob/main/project_images/storiesindatetimeorder-nomidnight.png)
 
 - Styled "new story" form
-Writing a new story - project_images\writenewstoryform01.png
+![Writing a new story](https://github.com/BBLogan/goodshecodesnews/blob/main/project_images/writenewstoryform01.png)
 
 - Story images
-Static images - she_codes_news\news\static\news\images
-Story images front page - project_images\frontpage-loggedout01.png
+![Static images](she_codes_news\news\static\news\images)
+![Story images front page](project_images\frontpage-loggedout01.png)
 
 - Login / logout
 logged in view navigation - project_images\loggedinnavigation.png
