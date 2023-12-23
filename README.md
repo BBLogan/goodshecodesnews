@@ -36,28 +36,28 @@ My ERD - project_images\dbschema.png
 ![Writing a new story](https://github.com/BBLogan/goodshecodesnews/blob/main/project_images/writenewstoryform01.png)
 
 - Story images
-![Static images](she_codes_news\news\static\news\images)
-![Story images front page](project_images\frontpage-loggedout01.png)
+![Static images](https://github.com/BBLogan/goodshecodesnews/tree/main/she_codes_news/news/static/news/images)
+![Story images front page](https://github.com/BBLogan/goodshecodesnews/blob/main/project_images/frontpage-loggedout01.png)
 
 - Login / logout
-logged in view navigation - project_images\loggedinnavigation.png
-logged out view navigation - project_images\loggedoutnavigation.png
+![logged in view navigation](https://github.com/BBLogan/goodshecodesnews/blob/main/project_images/loggedinnavigation.png)
+![logged out view navigation](https://github.com/BBLogan/goodshecodesnews/blob/main/project_images/loggedoutnavigation.png)
 
 - "Account view" page
-Loggedin Author Account View - project_images\myprofileview(loggedinauthor)01.png
+![Loggedin Author Account View](https://github.com/BBLogan/goodshecodesnews/blob/main/project_images/myprofileview(loggedinauthor)01.png)
 
 - "Create Account" page
-Create a new account form - project_images\createaccount01.png
+![Create a new account form](https://github.com/BBLogan/goodshecodesnews/blob/main/project_images/createaccount01.png)
 
 - View stories by author
-{description of image} {./relative_path_to_image_file}
+
 
 - "Login" button only visible when no user is logged in / "Logout" button only visible when a user is logged in
-Logged in view inside story update and delete buttons - project_images\storyviewloggedin02-update&delete.png
-Logged out view inside story - project_images\storyviewloggedout01.png
+![Logged in view inside story update and delete buttons](https://github.com/BBLogan/goodshecodesnews/blob/main/project_images/storyviewloggedin02-update%26delete.png)
+![Logged out view inside story](https://github.com/BBLogan/goodshecodesnews/blob/main/project_images/storyviewloggedout01.png)
 
 - "Create Story" functionality only available when user is logged in
-Create a new story image - logged in view - project_images\writenewstoryform01.png
+![Create a new story image - logged in view](https://github.com/BBLogan/goodshecodesnews/blob/main/project_images/writenewstory01.png)
 
 ## Additional Features
 Please note no additional features are currently with this project (as of 23/12/2023). Future revisions of the project may have the below. The list is kept as a reminder
