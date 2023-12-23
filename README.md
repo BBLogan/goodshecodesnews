@@ -30,7 +30,7 @@ My ERD - project_images\dbschema.png
 
 ## Project features
 - Order stories by date
-Stories order in date time chronology with no midnight - !storiesindatetimeorder-nomidnight.png(project_images\storiesindatetimeorder-nomidnight.png)
+Stories order in date time chronology with no midnight - !storiesindatetimeorder-nomidnight.png(project_images/storiesindatetimeorder-nomidnight.png)
 
 - Styled "new story" form
 Writing a new story - project_images\writenewstoryform01.png
